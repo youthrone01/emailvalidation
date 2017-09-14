@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Friends</title>
+    <style>
+      form {
+          margin-left: 200px;
+          margin-top: 20px;
+      } 
+
+      li{
+          list-style: none;
+          background-color: red;
+          margin-left: 200px;
+          margin-top: 140px;
+          height: 50px;
+          width: 300px;
+          color: white;
+      }
+    </style>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul class=flashes>
+        {% for category,message in messages %}
+        <li class="{{ category }}">{{message}}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+     
+        
+    <form action='/email' method='POST'>
+        <label for="email">Email Address:<input type="text" name="email" id="email"></label>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

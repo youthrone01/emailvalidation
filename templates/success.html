@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Success</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+            h3{
+                background-color: green;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <h3>The email address you enter ({{new_email}}) is a VALID email address! Thank you!!</h3>
+        
+        {% for email in emails%}
+        <h4>{{email['email']}} &nbsp;&nbsp;&nbsp; {{email['date']}}</h4>
+        {% endfor%}
+        
+    
+    </body>
+</html>
